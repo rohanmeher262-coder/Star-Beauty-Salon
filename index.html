@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+  <title>Star Beauty Salon · Balangir</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf8f5;
+      color: #2c3e3a;
+    }
+    h1, h2, h3, .playfair { font-family: 'Playfair Display', serif; }
+    .luxury-shadow { box-shadow: 0 20px 40px -12px rgba(20, 70, 60, 0.15); }
+    .card-hover {
+      transition: all 0.25s ease-in-out;
+      border: 1px solid rgba(180, 200, 190, 0.25);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(30, 100, 80, 0.2);
+      border-color: #b8cbc2;
+    }
+    .bg-teal-light { background-color: #e6f0ec; }
+    .btn-teal {
+      background: linear-gradient(145deg, #2b7a6b, #1f5f52);
+      color: #fff;
+      transition: 0.2s;
+      border: none;
+    }
+    .btn-teal:hover {
+      background: linear-gradient(145deg, #1f5f52, #154a3f);
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(30, 90, 70, 0.3);
+    }
+    .btn-outline-teal {
+      border: 1.5px solid #2b7a6b;
+      color: #1f4a40;
+      transition: 0.2s;
+    }
+    .btn-outline-teal:hover {
+      background: #2b7a6b;
+      color: white;
+      border-color: #2b7a6b;
+    }
+    .rating-star { color: #d4af37; }
+    .testimonial-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 8px 28px -12px rgba(30, 70, 60, 0.10);
+      transition: 0.2s;
+      border: 1px solid #e6eeea;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 16px 36px -12px rgba(30, 80, 70, 0.18);
+    }
+    .gallery-img {
+      border-radius: 20px;
+      object-fit: cover;
+      width: 100%;
+      height: 210px;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 18px -6px rgba(30, 60, 50, 0.08);
+    }
+    .gallery-img:hover { transform: scale(1.02); }
+    .footer-link { color: #cdddd6; transition: 0.2s; }
+    .footer-link:hover { color: #f5faf8; text-decoration: underline; }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+      z-index: 50;
+      transition: 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); background: #1fa85a; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #edf5f1 0%, #deece6 100%);
+    }
+    @media (max-width: 640px) {
+      .gallery-img { height: 150px; }
+    }
+    .text-teal { color: #1f6b5c; }
+    .bg-teal { background-color: #1f6b5c; }
+    /* expert cards */
+    .expert-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,0.05);
+      transition: 0.25s;
+      border: 1px solid #ecf3ef;
+    }
+    .expert-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -12px rgba(30,80,70,0.15); }
+  </style>
+</head>
+<body>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/919776950377?text=Hello%20Star%20Beauty%20Salon!%20I%20would%20like%20to%20book%20an%20appointment." 
+     target="_blank" class="whatsapp-float" aria-label="WhatsApp booking">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- HERO -->
+  <section class="hero-gradient relative overflow-hidden px-4 py-12 md:py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div class="flex-1 text-center lg:text-left">
+        <span class="inline-block bg-white/70 backdrop-blur-sm px-5 py-1.5 rounded-full text-sm font-medium text-[#1f5f52] tracking-wide border border-[#b8cbc2] mb-4">
+          <i class="fas fa-star text-[#d4af37] mr-1"></i> 4.5 ★ (33 reviews)
+        </span>
+        <h1 class="playfair text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#1f3d36]">
+          Enhance Your Beauty <br class="hidden sm:block"> with <span class="text-[#1f6b5c]">Star Beauty Salon</span>
+        </h1>
+        <p class="text-lg md:text-xl text-[#2f5a4e] mt-5 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Experience expert beauty care, personalized treatments, and a relaxing salon atmosphere in the heart of Balangir.
+        </p>
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
+          <a href="#contact" class="btn-teal px-8 py-3.5 rounded-full text-lg font-semibold shadow-lg inline-flex items-center gap-2">
+            <i class="fas fa-calendar-check"></i> Book Appointment
+          </a>
+          <a href="https://wa.me/919776950377?text=Hello%20Star%20Beauty%20Salon!" target="_blank" 
+             class="btn-outline-teal px-8 py-3.5 rounded-full text-lg font-medium inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm">
+            <i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp Us
+          </a>
+        </div>
+        <div class="flex items-center justify-center lg:justify-start gap-3 mt-6 text-sm text-[#2f5a4e]">
+          <span class="flex items-center"><i class="fas fa-clock text-[#1f6b5c] mr-1.5"></i> Open · Closes 9:00 PM</span>
+          <span class="w-1 h-1 bg-[#b8cbc2] rounded-full"></span>
+          <span><i class="fas fa-map-pin text-[#1f6b5c] mr-1.5"></i> Balangir, Odisha</span>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <div class="relative w-full max-w-lg rounded-3xl overflow-hidden luxury-shadow">
+          <img src="https://images.pexels.com/photos/3992962/pexels-photo-3992962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+               alt="Luxury salon interior" class="w-full h-auto object-cover" style="max-height: 460px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="py-16 md:py-24 px-4 bg-white/80">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">About us</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36] mt-2">Where Beauty Meets Elegance</h2>
+        <p class="text-[#2f5a4e] mt-5 leading-relaxed text-lg">
+          Star Beauty Salon is committed to helping you look and feel your best. With professional expertise, hygienic practices, and exceptional care, we create a comfortable environment where every client leaves radiant.
+        </p>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="bg-[#e6f0ec] p-4 rounded-2xl"><i class="fas fa-spa text-[#1f6b5c] text-2xl"></i><p class="font-medium mt-1">Expertise</p></div>
+          <div class="bg-[#e6f0ec] p-4 rounded-2xl"><i class="fas fa-leaf text-[#1f6b5c] text-2xl"></i><p class="font-medium mt-1">Quality Products</p></div>
+          <div class="bg-[#e6f0ec] p-4 rounded-2xl"><i class="fas fa-smile text-[#1f6b5c] text-2xl"></i><p class="font-medium mt-1">Satisfaction</p></div>
+          <div class="bg-[#e6f0ec] p-4 rounded-2xl"><i class="fas fa-hand-sparkles text-[#1f6b5c] text-2xl"></i><p class="font-medium mt-1">Hygiene</p></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-3xl overflow-hidden shadow-xl col-span-2">
+          <img src="https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Beautician working" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-md"><img src="https://images.pexels.com/photos/3993053/pexels-photo-3993053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bridal makeup" class="w-full h-32 object-cover"></div>
+        <div class="rounded-2xl overflow-hidden shadow-md"><img src="https://images.pexels.com/photos/3993055/pexels-photo-3993055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Salon interior" class="w-full h-32 object-cover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (styled like Fringe) -->
+  <section class="py-16 md:py-24 px-4 bg-[#e6f0ec]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Our services</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36] mt-2">Premium Beauty <span class="text-[#1f6b5c]">Collections</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-archway"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Eyebrow Beautification</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Precision shaping & tinting to frame your face perfectly.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-hand-sparkles"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Acrylic Nails</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Stunning, durable nail art with premium acrylics.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-wind"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Blow Dry Styling</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Salon-quality blowout that adds volume and shine.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-ribbon"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Box Braids</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Protective, stylish braids tailored to your look.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-feather"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Body Waxing</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Smooth, long-lasting results with gentle formulas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl card-hover text-center">
+          <div class="w-16 h-16 bg-[#e6f0ec] rounded-2xl flex items-center justify-center mx-auto text-3xl text-[#1f6b5c]"><i class="fas fa-face-smile"></i></div>
+          <h3 class="font-serif text-xl font-semibold mt-4">Acne Treatments</h3>
+          <p class="text-[#2f5a4e] text-sm leading-relaxed mt-2">Targeted skincare to clarify and rejuvenate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="py-16 md:py-24 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Portfolio</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36]">Visual <span class="text-[#1f6b5c]">Storytelling</span></h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3992959/pexels-photo-3992959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Salon interior">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3993054/pexels-photo-3993054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bridal makeup">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3993048/pexels-photo-3993048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Nail art">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3992970/pexels-photo-3992970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hair styling">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3993052/pexels-photo-3993052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Waxing">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3992968/pexels-photo-3992968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Happy client">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3992964/pexels-photo-3992964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Makeup session">
+        <img class="gallery-img" src="https://images.pexels.com/photos/3993049/pexels-photo-3993049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Nail art closeup">
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE (stats style) -->
+  <section class="py-16 md:py-24 px-4 bg-[#e6f0ec]">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Why choose us</span>
+      <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36] mt-2">The <span class="text-[#1f6b5c]">Star</span> difference</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-star text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">4.5 ★</h4><p class="text-[#2f5a4e]">33+ reviews</p></div>
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-user-tie text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">Experts</h4><p class="text-[#2f5a4e]">8+ years avg</p></div>
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-crown text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">Premium</h4><p class="text-[#2f5a4e]">Luxury brands</p></div>
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-hand-sparkles text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">Hygiene</h4><p class="text-[#2f5a4e]">Sterilized tools</p></div>
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-heart text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">Personalized</h4><p class="text-[#2f5a4e]">Tailored consults</p></div>
+        <div class="bg-white p-8 rounded-3xl shadow-sm"><i class="fas fa-map-pin text-3xl text-[#1f6b5c]"></i><h4 class="font-bold text-2xl mt-3">Trusted</h4><p class="text-[#2f5a4e]">Local favourite</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 md:py-24 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Testimonials</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36]">Client <span class="text-[#1f6b5c]">Stories</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="testimonial-card"><p class="text-[#1f3d36]">“Excellent service and friendly staff. The salon is clean, professional, and welcoming.”</p><div class="mt-4 flex items-center"><span class="rating-star">★★★★★</span><span class="ml-2 text-sm text-[#2f5a4e]">— Anjali</span></div></div>
+        <div class="testimonial-card"><p class="text-[#1f3d36]">“My bridal makeup experience was amazing. Highly recommended for special occasions.”</p><div class="mt-4 flex items-center"><span class="rating-star">★★★★★</span><span class="ml-2 text-sm text-[#2f5a4e]">— Priya</span></div></div>
+        <div class="testimonial-card"><p class="text-[#1f3d36]">“Very satisfied with waxing & skincare. Great value for money.”</p><div class="mt-4 flex items-center"><span class="rating-star">★★★★★</span><span class="ml-2 text-sm text-[#2f5a4e]">— Sneha</span></div></div>
+        <div class="testimonial-card"><p class="text-[#1f3d36]">“The keratin treatment transformed my hair. Highly recommend Star Beauty.”</p><div class="mt-4 flex items-center"><span class="rating-star">★★★★★</span><span class="ml-2 text-sm text-[#2f5a4e]">— Ritu</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTS (new section) -->
+  <section class="py-16 md:py-24 px-4 bg-[#e6f0ec]">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Meet our experts</span>
+      <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36] mt-2">The <span class="text-[#1f6b5c]">Artisans</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="expert-card"><div class="w-20 h-20 bg-[#d4e3dd] rounded-full mx-auto flex items-center justify-center text-3xl text-[#1f6b5c]"><i class="fas fa-user"></i></div><h4 class="font-bold text-xl mt-3">Priya Sharma</h4><p class="text-[#2f5a4e] text-sm">Creative Director · 10 yrs</p></div>
+        <div class="expert-card"><div class="w-20 h-20 bg-[#d4e3dd] rounded-full mx-auto flex items-center justify-center text-3xl text-[#1f6b5c]"><i class="fas fa-user"></i></div><h4 class="font-bold text-xl mt-3">Anita Patel</h4><p class="text-[#2f5a4e] text-sm">Makeup Artist · 8 yrs</p></div>
+        <div class="expert-card"><div class="w-20 h-20 bg-[#d4e3dd] rounded-full mx-auto flex items-center justify-center text-3xl text-[#1f6b5c]"><i class="fas fa-user"></i></div><h4 class="font-bold text-xl mt-3">Ravi Kumar</h4><p class="text-[#2f5a4e] text-sm">Hair Specialist · 12 yrs</p></div>
+        <div class="expert-card"><div class="w-20 h-20 bg-[#d4e3dd] rounded-full mx-auto flex items-center justify-center text-3xl text-[#1f6b5c]"><i class="fas fa-user"></i></div><h4 class="font-bold text-xl mt-3">Neha Singh</h4><p class="text-[#2f5a4e] text-sm">Nail Artist · 6 yrs</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP -->
+  <section id="contact" class="py-16 md:py-24 px-4 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div>
+        <span class="text-[#1f6b5c] font-semibold tracking-widest text-sm uppercase">Visit us</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-[#1f3d36] mt-2">Find <span class="text-[#1f6b5c]">Star</span></h2>
+        <div class="space-y-4 mt-6 text-[#1f3d36]">
+          <p><i class="fas fa-map-pin text-[#1f6b5c] w-6"></i> Beside Bhagwat Mandir, Opposite Pawan Putra Medical Store, Rugudipada, Balangir, Odisha – 767001</p>
+          <p><i class="fas fa-phone text-[#1f6b5c] w-6"></i> <a href="tel:+919776950377" class="hover:underline">+91 97769 50377</a></p>
+          <p><i class="fab fa-whatsapp text-[#25D366] w-6"></i> <a href="https://wa.me/919776950377" target="_blank" class="hover:underline">+91 97769 50377</a></p>
+          <p><i class="fas fa-clock text-[#1f6b5c] w-6"></i> Daily: 9:00 AM – 9:00 PM</p>
+        </div>
+        <div class="flex flex-wrap gap-4 mt-6">
+          <a href="tel:+919776950377" class="btn-teal px-7 py-3 rounded-full font-medium inline-flex items-center gap-2"><i class="fas fa-phone"></i> Call now</a>
+          <a href="https://wa.me/919776950377?text=Hello%20Star%20Beauty%20Salon!" target="_blank" class="btn-outline-teal px-7 py-3 rounded-full font-medium inline-flex items-center gap-2 bg-white/60"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Beside+Bhagwat+Mandir+Balangir" target="_blank" class="btn-outline-teal px-7 py-3 rounded-full font-medium inline-flex items-center gap-2 bg-white/60"><i class="fas fa-directions"></i> Directions</a>
+        </div>
+        <div class="mt-6 rounded-2xl overflow-hidden shadow-md">
+          <img src="https://images.pexels.com/photos/3992963/pexels-photo-3992963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Salon treatment" class="w-full h-28 object-cover">
+        </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-xl h-64 md:h-auto min-h-[220px]">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238.34330859555762!2d83.28355770274952!3d21.160481052225583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2a8f1b4d1e3d6b%3A0x2b6a6f5e9d6c8f3e!2sBhagwat%20Mandir%2C%20Rugudipada%2C%20Balangir%2C%20Odisha!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0; min-height: 220px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1f3d36] text-[#cdddd6] px-4 py-12">
+    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="playfair text-2xl text-white font-bold">Star Beauty Salon</h3>
+        <p class="text-sm mt-2">Balangir's trusted beauty destination since 2019.</p>
+        <div class="flex gap-4 mt-4 text-xl">
+          <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div><h4 class="font-bold text-white">Quick links</h4><ul class="space-y-1 mt-2"><li><a href="#" class="footer-link">Home</a></li><li><a href="#" class="footer-link">About</a></li><li><a href="#" class="footer-link">Services</a></li><li><a href="#" class="footer-link">Gallery</a></li></ul></div>
+      <div><h4 class="font-bold text-white">Contact</h4><p class="text-sm mt-2">+91 97769 50377</p><p class="text-sm">Beside Bhagwat Mandir, Balangir</p></div>
+      <div><h4 class="font-bold text-white">Hours</h4><p class="text-sm mt-2">Open daily: 9:00 AM – 9:00 PM</p><p class="text-sm"><i class="fas fa-star text-[#d4af37]"></i> 4.5 ★ (33 reviews)</p></div>
+    </div>
+    <div class="border-t border-[#3d5f56] mt-8 pt-6 text-center text-sm">
+      © 2026 Star Beauty Salon. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
